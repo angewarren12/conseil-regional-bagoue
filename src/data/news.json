@@ -1,0 +1,30 @@
+{
+  "news": [
+    {
+      "id": "radio-ci-bagoue",
+      "image": "/images/news/adio-ci-bagoue.png",
+      "date": "19 - 24 janvier 2025",
+      "title": "Radio Côte d'Ivoire s'installe dans la Bagoué",
+      "description": "Populations de la Bagoué, réservons un accueil chaleureux à l'équipe de Radio Côte d'Ivoire et participons massivement aux émissions qui mettront en lumière notre belle région.",
+      "fullDescription": "Populations de la Bagoué, réservons un accueil chaleureux à l'équipe de Radio Côte d'Ivoire et participons massivement aux émissions qui mettront en lumière notre belle région."
+    },
+    {
+      "id": "condoleances-saliou-toure",
+      "image": "/images/news/condoleances-saliou-toure.png",
+      "date": "19 novembre 2024",
+      "title": "Présentation de condoléances au Professeur Saliou Touré",
+      "description": "Endeuillé par le décès de sa fille, M. Bruno Nabagné Koné, Président du Conseil Régional de la Bagoué, a tenu à marquer sa solidarité en se rendant auprès de son aîné...",
+      "fullDescription": "Endeuillé par le décès de sa fille, M. Bruno Nabagné Koné, Président du Conseil Régional de la Bagoué, a tenu à marquer sa solidarité en se rendant auprès de son aîné, le Professeur Saliou Touré, pour lui présenter ses condoléances le mardi 19 novembre 2024. Accompagné de son épouse et de plusieurs de ses collaborateurs, il a exprimé sa profonde compassion à l'endroit de la famille éplorée. Cette visite de condoléances reflète la considération et le respect que M. Bruno Nabagné Koné porte au Professeur Saliou Touré, ainsi que son engagement à être présent pour ses proches et amis, dans les moments de bonheur comme dans les épreuves difficiles.",
+      "tags": ["#Solidarité", "#UnionEtCompassion", "#HommageEtSoutien", "#BrunoNabagnéKoné"]
+    },
+    {
+      "id": "intronisation-konate",
+      "image": "/images/news/intronisation-konate.png",
+      "date": "30 novembre 2024",
+      "title": "Intronisation de Konaté Séguénon : Bruno Koné réaffirme son soutien",
+      "description": "Le samedi 30 novembre 2024, la Place Ficgayo de Yopougon a abrité l'intronisation de Konaté Séguénon comme Chef de la communauté des ressortissants de la Bagoué...",
+      "fullDescription": "Le samedi 30 novembre 2024, la Place Ficgayo de Yopougon a abrité l'intronisation de Konaté Séguénon comme Chef de la communauté des ressortissants de la Bagoué. Cet événement, riche en émotions, a réuni une foule venue célébrer la fraternité, la solidarité et l'attachement aux valeurs culturelles de la région. Représentant le Ministre Bruno Nabagné Koné, Président du Conseil Régional de la Bagoué, M. Konon Konaté, 3ᵉ Vice-Président du Conseil Régional de la Bagoué, a exprimé sa gratitude pour cette initiative qui renforce l'unité des fils et filles de la région. Dans son allocution, il a salué le leadership du Chef Konaté Séguénon et a réitéré l'engagement du Ministre à œuvrer pour le développement de la région et de sa diaspora. « Le Ministre Bruno Nabagné Koné, fidèle à son engagement pour le développement de la Bagoué et pour le mieux vivre de ses fils et de ses filles, réaffirme son soutien à toute action visant à promouvoir notre culture, à renforcer notre cohésion et à améliorer le bien-être de nos populations, que ce soit dans notre région ou dans la diaspora », a-t-il déclaré. Cette intronisation qui ouvre une nouvelle page dans l'histoire des ressortissants de la Bagoué à Yopougon a également été marquée par la présence de plusieurs personnalités de la Bagoué notamment, le Ministre Dossongui Koné, l'artiste Aïcha Koné, M. DOFÉRÉ Koné, Directeur de Cabinet du P.CRB ainsi que plusieurs élus et cadres.",
+      "tags": ["#CohésionBagoué", "#UnitéEtSolidarité", "#TraditionsEtDéveloppement", "#BagouéEnAvant"]
+    }
+  ]
+}

@@ -1,0 +1,682 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
+@layer base {
+  :root {
+    --primary-color: #006837;
+    --secondary-color: #FFA500;
+    --text-color: #333;
+    --light-gray: #f8f9fa;
+    --border-color: #e9ecef;
+  }
+
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    @apply min-h-screen bg-gray-50;
+    line-height: 1.6;
+    @apply pt-24;
+  }
+
+  /* Ajustement des espacements */
+  main {
+    padding-top: 104px; /* Hauteur exacte de la navbar (incluant la topbar) */
+  }
+
+  .banner-container {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Slider styles */
+  .slider-container {
+    @apply relative mb-0;
+  }
+
+  .slider-item {
+    @apply relative;
+  }
+
+  .slick-slider {
+    @apply mb-0;
+  }
+
+  .slick-dots {
+    @apply bottom-8 z-10;
+  }
+
+  .slick-dots li button:before {
+    @apply text-white opacity-70 text-xl;
+  }
+
+  .slick-dots li.slick-active button:before {
+    @apply text-primary opacity-100;
+  }
+
+  .slick-prev,
+  .slick-next {
+    @apply z-10 w-12 h-12;
+  }
+
+  .slick-prev {
+    @apply left-6;
+  }
+
+  .slick-next {
+    @apply right-6;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    @apply text-3xl opacity-70;
+  }
+
+  /* Top Bar */
+  .top-bar {
+    @apply text-sm py-2;
+  }
+
+  .top-bar .social-links a {
+    @apply hover:opacity-80 transition-opacity;
+  }
+
+  /* Header */
+  .header-info .region-name {
+    @apply text-primary text-4xl font-bold mb-2;
+  }
+
+  .header-info .region-motto {
+    @apply text-secondary text-lg mb-0;
+  }
+
+  /* Navbar */
+  .navbar {
+    @apply shadow-md bg-white fixed top-0 left-0 right-0 z-50;
+  }
+
+  .navbar .nav-link {
+    @apply text-gray-800 font-medium px-6 py-4 transition-colors;
+  }
+
+  .navbar .nav-link:hover,
+  .navbar .nav-link.active {
+    @apply text-primary;
+  }
+
+  /* Quick Access Section */
+  .quick-access-card {
+    @apply bg-white rounded-lg p-8 h-full shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .quick-access-card .icon-wrapper {
+    @apply text-primary text-3xl mb-4;
+  }
+
+  /* President Section */
+  .president-image-wrapper {
+    @apply relative overflow-hidden rounded-lg shadow-xl;
+  }
+
+  .president-content {
+    @apply pl-8;
+  }
+
+  .president-content .section-title {
+    @apply text-primary text-4xl font-bold mb-6;
+  }
+
+  .president-name {
+    @apply text-secondary text-2xl font-semibold mb-2;
+  }
+
+  .president-title {
+    @apply text-lg text-gray-600;
+  }
+
+  /* News Section */
+  .news-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-lg h-full transition-transform hover:-translate-y-1;
+  }
+
+  .news-date {
+    @apply text-gray-600 text-sm;
+  }
+
+  .news-title {
+    @apply text-primary text-xl font-semibold my-4;
+  }
+
+  .news-excerpt {
+    @apply text-gray-600 mb-4;
+  }
+
+  /* Statistics Section */
+  .statistics-section {
+    @apply bg-primary text-white py-16;
+  }
+
+  .stat-item {
+    @apply p-8 text-center;
+  }
+
+  .stat-number {
+    @apply text-5xl font-bold mb-2;
+  }
+
+  .stat-label {
+    @apply text-lg opacity-90;
+  }
+
+  /* Hero section styles */
+  .hero-section {
+    @apply relative py-16 overflow-hidden;
+  }
+
+  .hero-content {
+    @apply relative z-10;
+  }
+
+  .hero-title {
+    @apply text-secondary text-5xl font-bold mb-6;
+  }
+
+  .hero-text {
+    @apply text-lg text-gray-600 mb-8 max-w-md;
+  }
+
+  .hero-image {
+    @apply relative z-0;
+  }
+
+  .hero-image img {
+    @apply rounded-lg;
+  }
+
+  .hero-pattern {
+    @apply absolute right-0 top-1/2 transform -translate-y-1/2 w-72 h-72 bg-primary opacity-10 rounded-3xl rotate-45;
+  }
+
+  /* Section styles */
+  .section-title {
+    @apply text-secondary text-4xl font-bold mb-8 relative pb-4;
+  }
+
+  .section-title:after {
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-primary;
+  }
+
+  /* President section */
+  .president-section {
+    @apply py-16;
+  }
+
+  .president-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-lg;
+  }
+
+  .president-image {
+    @apply w-full h-64 object-cover;
+  }
+
+  /* Gallery section */
+  .gallery-section {
+    @apply py-16;
+  }
+
+  .gallery-title {
+    @apply text-secondary text-4xl font-bold mb-8;
+  }
+
+  .gallery-grid {
+    @apply grid gap-6;
+  }
+
+  .gallery-item {
+    @apply rounded-lg overflow-hidden shadow-lg;
+  }
+
+  .gallery-item img {
+    @apply w-full h-40 object-cover transition-transform;
+  }
+
+  .gallery-item:hover img {
+    @apply scale-105;
+  }
+
+  /* Activities section */
+  .activities-section .card {
+    @apply border-0 shadow-lg transition-transform;
+  }
+
+  .activities-section .card:hover {
+    @apply -translate-y-1;
+  }
+
+  .activities-section .card-img-top {
+    @apply h-40 object-cover;
+  }
+
+  /* Documents section */
+  .document-link {
+    @apply flex items-center p-2 rounded-lg transition-background-color;
+  }
+
+  .document-link:hover {
+    @apply bg-gray-100;
+  }
+
+  .document-link i {
+    @apply text-lg mr-2;
+  }
+
+  /* Cultural map */
+  .cultural-map {
+    @apply rounded-lg overflow-hidden shadow-lg;
+  }
+
+  /* Structures section */
+  .structure-card {
+    @apply text-center p-8 rounded-lg bg-white shadow-lg transition-transform;
+  }
+
+  .structure-card:hover {
+    @apply -translate-y-1;
+  }
+
+  .structure-icon {
+    @apply text-6xl text-primary mb-4;
+  }
+
+  /* Banner styles */
+  .banner {
+    @apply border-b border-gray-300 shadow-sm;
+  }
+
+  .banner img {
+    @apply max-h-24 mx-auto;
+  }
+
+  /* Footer */
+  .footer {
+    @apply bg-secondary text-white p-16;
+  }
+
+  .footer h5 {
+    @apply text-white mb-6 font-bold;
+  }
+
+  .footer-links {
+    @apply list-none p-0;
+  }
+
+  .footer-links li {
+    @apply mb-2;
+  }
+
+  .footer-links a {
+    @apply text-white opacity-70 transition-colors;
+  }
+
+  .footer-links a:hover {
+    @apply text-white;
+  }
+
+  .social-icons {
+    @apply flex gap-4;
+  }
+
+  .social-icons a {
+    @apply text-white opacity-70 transition-colors;
+  }
+
+  .social-icons a:hover {
+    @apply text-white;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-colors;
+  }
+
+  .btn-outline-primary {
+    @apply border-2 border-primary text-primary px-6 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors;
+  }
+}
+
+@layer components {
+  /* Slider styles */
+  .slider-container {
+    @apply relative mb-0;
+  }
+
+  .slider-item {
+    @apply relative;
+  }
+
+  .slick-slider {
+    @apply mb-0;
+  }
+
+  .slick-dots {
+    @apply bottom-8 z-10;
+  }
+
+  .slick-dots li button:before {
+    @apply text-white opacity-70 text-xl;
+  }
+
+  .slick-dots li.slick-active button:before {
+    @apply text-primary opacity-100;
+  }
+
+  .slick-prev,
+  .slick-next {
+    @apply z-10 w-12 h-12;
+  }
+
+  .slick-prev {
+    @apply left-6;
+  }
+
+  .slick-next {
+    @apply right-6;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    @apply text-3xl opacity-70;
+  }
+
+  /* Top Bar */
+  .top-bar {
+    @apply text-sm py-2;
+  }
+
+  .top-bar .social-links a {
+    @apply hover:opacity-80 transition-opacity;
+  }
+
+  /* Header */
+  .header-info .region-name {
+    @apply text-primary text-4xl font-bold mb-2;
+  }
+
+  .header-info .region-motto {
+    @apply text-secondary text-lg mb-0;
+  }
+
+  /* Navbar */
+  .navbar {
+    @apply shadow-md bg-white fixed top-0 left-0 right-0 z-50;
+  }
+
+  .nav-link {
+    @apply text-gray-800 font-medium px-6 py-4 transition-colors;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    @apply text-primary;
+  }
+
+  /* Quick Access Section */
+  .quick-access-card {
+    @apply bg-white rounded-lg p-8 h-full shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .quick-access-card .icon-wrapper {
+    @apply text-primary text-3xl mb-4;
+  }
+
+  /* President Section */
+  .president-image-wrapper {
+    @apply relative overflow-hidden rounded-lg shadow-xl;
+  }
+
+  .president-content {
+    @apply pl-8;
+  }
+
+  .president-content .section-title {
+    @apply text-primary text-4xl font-bold mb-6;
+  }
+
+  .president-name {
+    @apply text-secondary text-2xl font-semibold mb-2;
+  }
+
+  .president-title {
+    @apply text-lg text-gray-600;
+  }
+
+  /* News Section */
+  .news-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-lg h-full transition-transform hover:-translate-y-1;
+  }
+
+  .news-date {
+    @apply text-gray-600 text-sm;
+  }
+
+  .news-title {
+    @apply text-primary text-xl font-semibold my-4;
+  }
+
+  .news-excerpt {
+    @apply text-gray-600 mb-4;
+  }
+
+  /* Statistics Section */
+  .statistics-section {
+    @apply bg-primary text-white py-16;
+  }
+
+  .stat-item {
+    @apply p-8 text-center;
+  }
+
+  .stat-number {
+    @apply text-5xl font-bold mb-2;
+  }
+
+  .stat-label {
+    @apply text-lg opacity-90;
+  }
+
+  /* Hero section styles */
+  .hero-section {
+    @apply relative py-16 overflow-hidden;
+  }
+
+  .hero-content {
+    @apply relative z-10;
+  }
+
+  .hero-title {
+    @apply text-secondary text-5xl font-bold mb-6;
+  }
+
+  .hero-text {
+    @apply text-lg text-gray-600 mb-8 max-w-md;
+  }
+
+  .hero-image {
+    @apply relative z-0;
+  }
+
+  .hero-image img {
+    @apply rounded-lg;
+  }
+
+  .hero-pattern {
+    @apply absolute right-0 top-1/2 transform -translate-y-1/2 w-72 h-72 bg-primary opacity-10 rounded-3xl rotate-45;
+  }
+
+  /* Section styles */
+  .section-title {
+    @apply text-secondary text-4xl font-bold mb-8 relative pb-4;
+  }
+
+  .section-title:after {
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-primary;
+  }
+
+  /* President section */
+  .president-section {
+    @apply py-16;
+  }
+
+  .president-card {
+    @apply bg-white rounded-lg overflow-hidden shadow-lg;
+  }
+
+  .president-image {
+    @apply w-full h-64 object-cover;
+  }
+
+  /* Gallery section */
+  .gallery-section {
+    @apply py-16;
+  }
+
+  .gallery-title {
+    @apply text-secondary text-4xl font-bold mb-8;
+  }
+
+  .gallery-grid {
+    @apply grid gap-6;
+  }
+
+  .gallery-item {
+    @apply rounded-lg overflow-hidden shadow-lg;
+  }
+
+  .gallery-item img {
+    @apply w-full h-40 object-cover transition-transform;
+  }
+
+  .gallery-item:hover img {
+    @apply scale-105;
+  }
+
+  /* Activities section */
+  .activities-section .card {
+    @apply border-0 shadow-lg transition-transform;
+  }
+
+  .activities-section .card:hover {
+    @apply -translate-y-1;
+  }
+
+  .activities-section .card-img-top {
+    @apply h-40 object-cover;
+  }
+
+  /* Documents section */
+  .document-link {
+    @apply flex items-center p-2 rounded-lg transition-background-color;
+  }
+
+  .document-link:hover {
+    @apply bg-gray-100;
+  }
+
+  .document-link i {
+    @apply text-lg mr-2;
+  }
+
+  /* Cultural map */
+  .cultural-map {
+    @apply rounded-lg overflow-hidden shadow-lg;
+  }
+
+  /* Structures section */
+  .structure-card {
+    @apply text-center p-8 rounded-lg bg-white shadow-lg transition-transform;
+  }
+
+  .structure-card:hover {
+    @apply -translate-y-1;
+  }
+
+  .structure-icon {
+    @apply text-6xl text-primary mb-4;
+  }
+
+  /* Banner styles */
+  .banner {
+    @apply border-b border-gray-300 shadow-sm;
+  }
+
+  .banner img {
+    @apply max-h-24 mx-auto;
+  }
+
+  /* Footer */
+  .footer {
+    @apply bg-secondary text-white p-16;
+  }
+
+  .footer h5 {
+    @apply text-white mb-6 font-bold;
+  }
+
+  .footer-links {
+    @apply list-none p-0;
+  }
+
+  .footer-links li {
+    @apply mb-2;
+  }
+
+  .footer-links a {
+    @apply text-white opacity-70 transition-colors;
+  }
+
+  .footer-links a:hover {
+    @apply text-white;
+  }
+
+  .social-icons {
+    @apply flex gap-4;
+  }
+
+  .social-icons a {
+    @apply text-white opacity-70 transition-colors;
+  }
+
+  .social-icons a:hover {
+    @apply text-white;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-colors;
+  }
+
+  .btn-outline-primary {
+    @apply border-2 border-primary text-primary px-6 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors;
+  }
+}
+
+@layer utilities {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-colors;
+  }
+
+  .btn-outline-primary {
+    @apply border-2 border-primary text-primary px-6 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-8;
+  }
+}
