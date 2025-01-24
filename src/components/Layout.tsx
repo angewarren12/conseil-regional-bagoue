@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Head from 'next/head';
+import QuickAccessButton from './QuickAccessButton';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -18,6 +19,7 @@ const Layout = ({ children }: LayoutProps) => {
       </Head>
       <div className="flex flex-col min-h-screen">
         <Navbar />
+        <QuickAccessButton />
         <main className="flex-grow">
           {children}
         </main>

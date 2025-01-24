@@ -4,31 +4,29 @@ import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
 
   const menuItems = [
     { label: 'Accueil', href: '/' },
-    {
-      label: 'La Région',
-      href: '#',
-      submenu: [
-        { label: 'Présentation', href: '/presentation' },
-        { label: 'Organisation', href: '/organisation' },
-        { label: 'Économie', href: '/economie' }
-      ]
-    },
+    { label: 'La Région', href: '/region' },
     {
       label: 'Institution',
       href: '#',
       submenu: [
-        { label: 'Le Président', href: '/president' },
-        { label: 'Le Bureau', href: '/bureau' },
-        { label: 'Le Conseil', href: '/conseil' }
+        { label: 'Le Président', href: '/institutions/president' },
+        { label: 'Le Bureau', href: '/institutions/bureau' },
+        { label: 'Le Conseil', href: '/institutions/conseil' },
+        { label: "L'Administration", href: '/institutions/administration' }
       ]
     },
     { label: 'Actualités', href: '/actualites' },
     { label: 'Projets', href: '/projets' },
     { label: 'Contact', href: '/contact' }
   ];
+
+  const handleSubmenuClick = (index: number) => {
+    setActiveSubmenu(activeSubmenu === index ? null : index);
+  };
 
   return (
     <nav className="bg-white shadow-lg fixed w-full z-50 top-0">
@@ -75,20 +73,47 @@ const Navbar = () => {
           <div className="hidden md:flex items-center">
             <div className="flex items-center space-x-4">
               {menuItems.map((item, index) => (
-                <div key={index} className="relative group flex items-center">
+                <div 
+                  key={index} 
+                  className="relative group"
+                  onMouseEnter={() => setActiveSubmenu(index)}
+                  onMouseLeave={() => setActiveSubmenu(null)}
+                >
                   {item.submenu ? (
                     <>
-                      <button className="inline-flex items-center text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium group-hover:text-primary">
+                      <button 
+                        onClick={() => handleSubmenuClick(index)}
+                        className="inline-flex items-center text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium"
+                      >
                         {item.label}
-                        <i className="bi bi-chevron-down ml-1 text-xs"></i>
+                        <svg
+                          className={`ml-2 h-4 w-4 transition-transform duration-200 ${
+                            activeSubmenu === index ? 'transform rotate-180' : ''
+                          }`}
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
                       </button>
-                      <div className="absolute left-0 top-full mt-1 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <div 
+                        className={`
+                          absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 
+                          transition-all duration-200 transform origin-top
+                          ${(activeSubmenu === index) ? 'scale-100 opacity-100 visible' : 'scale-95 opacity-0 invisible'}
+                        `}
+                      >
                         <div className="py-1">
                           {item.submenu.map((subItem, subIndex) => (
                             <Link
                               key={subIndex}
                               href={subItem.href}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600"
                             >
                               {subItem.label}
                             </Link>
@@ -99,7 +124,7 @@ const Navbar = () => {
                   ) : (
                     <Link
                       href={item.href}
-                      className="inline-flex items-center text-gray-700 hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
+                      className="inline-flex items-center text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium"
                     >
                       {item.label}
                     </Link>
@@ -131,35 +156,37 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-white border-t border-gray-200`}>
+      {/* Mobile Menu */}
+      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-white`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
           {menuItems.map((item, index) => (
             <div key={index}>
               {item.submenu ? (
-                <div className="space-y-1">
+                <>
                   <button
-                    className="w-full text-left text-gray-700 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                    onClick={() => handleSubmenuClick(index)}
+                    className="w-full text-left px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 block text-base font-medium"
                   >
                     {item.label}
-                    <i className="bi bi-chevron-down ml-1"></i>
                   </button>
-                  <div className="pl-4">
-                    {item.submenu.map((subItem, subIndex) => (
-                      <Link
-                        key={subIndex}
-                        href={subItem.href}
-                        className="text-gray-600 hover:text-primary block px-3 py-2 rounded-md text-sm"
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+                  {activeSubmenu === index && (
+                    <div className="pl-4">
+                      {item.submenu.map((subItem, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          href={subItem.href}
+                          className="block px-3 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 text-sm"
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
               ) : (
                 <Link
                   href={item.href}
-                  className="text-gray-700 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
+                  className="block px-3 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-base font-medium"
                 >
                   {item.label}
                 </Link>

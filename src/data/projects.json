@@ -1,0 +1,135 @@
+{
+  "projects": [
+    {
+      "id": "infrastructure-routiere",
+      "title": "Infrastructures Routières",
+      "image": "/images/projects/routes.jpg",
+      "images": [
+        {
+          "url": "/images/projects/routes-1.jpg",
+          "caption": "Construction de la route principale"
+        },
+        {
+          "url": "/images/projects/routes-2.jpg",
+          "caption": "Travaux de terrassement"
+        },
+        {
+          "url": "/images/projects/routes-3.jpg",
+          "caption": "Installation des systèmes de drainage"
+        },
+        {
+          "url": "/images/projects/routes-4.jpg",
+          "caption": "Vue aérienne du chantier"
+        }
+      ],
+      "category": "Infrastructure",
+      "status": "En cours",
+      "progress": 65,
+      "description": "Programme de réhabilitation et de construction des routes rurales pour désenclaver les zones agricoles.",
+      "details": {
+        "budget": "2.5 milliards FCFA",
+        "duration": "2024-2026",
+        "location": "Région de la Bagoué",
+        "beneficiaries": "375,000 habitants",
+        "objectives": [
+          "Améliorer l'accès aux zones agricoles",
+          "Faciliter le transport des produits agricoles",
+          "Réduire les coûts de transport",
+          "Améliorer la sécurité routière"
+        ]
+      }
+    },
+    {
+      "id": "education-numerique",
+      "title": "Éducation Numérique",
+      "image": "/images/projects/education.jpg",
+      "images": [
+        {
+          "url": "/images/projects/education-1.jpg",
+          "caption": "Installation des ordinateurs dans les salles de classe"
+        },
+        {
+          "url": "/images/projects/education-2.jpg",
+          "caption": "Formation des enseignants"
+        },
+        {
+          "url": "/images/projects/education-3.jpg",
+          "caption": "Élèves utilisant les nouveaux équipements"
+        },
+        {
+          "url": "/images/projects/education-4.jpg",
+          "caption": "Salle informatique rénovée"
+        }
+      ],
+      "category": "Éducation",
+      "status": "Planifié",
+      "progress": 25,
+      "description": "Équipement des établissements scolaires en matériel informatique et connexion internet.",
+      "details": {
+        "budget": "1.2 milliards FCFA",
+        "duration": "2024-2025",
+        "location": "Établissements scolaires de la région",
+        "beneficiaries": "15,000 élèves",
+        "objectives": [
+          "Réduire la fracture numérique",
+          "Améliorer la qualité de l'enseignement",
+          "Former les enseignants aux outils numériques",
+          "Faciliter l'accès à l'information"
+        ]
+      }
+    },
+    {
+      "id": "sante-communautaire",
+      "title": "Santé Communautaire",
+      "image": "/images/projects/sante.jpg",
+      "images": [
+        {
+          "url": "/images/projects/sante-1.jpg",
+          "caption": "Construction du nouveau centre de santé"
+        },
+        {
+          "url": "/images/projects/sante-2.jpg",
+          "caption": "Installation des équipements médicaux"
+        },
+        {
+          "url": "/images/projects/sante-3.jpg",
+          "caption": "Formation du personnel médical"
+        },
+        {
+          "url": "/images/projects/sante-4.jpg",
+          "caption": "Campagne de vaccination"
+        }
+      ],
+      "category": "Santé",
+      "status": "En cours",
+      "progress": 45,
+      "description": "Construction et équipement de centres de santé communautaires dans les zones rurales.",
+      "details": {
+        "budget": "1.8 milliards FCFA",
+        "duration": "2024-2025",
+        "location": "Zones rurales de la Bagoué",
+        "beneficiaries": "150,000 habitants",
+        "objectives": [
+          "Améliorer l'accès aux soins de santé",
+          "Réduire la mortalité maternelle et infantile",
+          "Former le personnel médical local",
+          "Équiper les centres en matériel médical moderne"
+        ]
+      }
+    }
+  ],
+  "categories": [
+    "Infrastructure",
+    "Éducation",
+    "Santé",
+    "Agriculture",
+    "Environnement",
+    "Culture"
+  ],
+  "statuses": [
+    "En cours",
+    "Planifié",
+    "Terminé",
+    "En pause"
+  ]
+}
