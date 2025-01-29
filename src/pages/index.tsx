@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,8 +11,45 @@ import Footer from '../components/Footer';
 import NewsCard from '../components/NewsCard';
 import RegionsGrid from '../components/RegionsGrid';
 import newsData from '../data/news.json';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { Parallax } from 'react-parallax';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out',
+    });
+  }, []);
+
+  const [heroRef, heroInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const heroVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const handleExploreClick = () => {
+    router.push('/region');
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Head>
@@ -107,21 +144,7 @@ export default function Home() {
         {/* Regional Information */}
         <RegionalInfo />
 
-        {/* Interactive Map Section */}
-        <section className="py-24 bg-gradient-to-b from-white via-gray-50 to-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <span className="text-green-600 font-semibold text-sm uppercase tracking-wider mb-4 block">Découverte</span>
-              <h2 className="text-5xl font-bold text-gray-900 mb-6">Les Régions de la Côte d'Ivoire</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-yellow-400 mx-auto mb-8"></div>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Explorez la richesse culturelle et la diversité des régions ivoiriennes. Chaque région raconte une histoire unique, 
-                préserve un patrimoine précieux et contribue à la beauté de notre pays.
-              </p>
-            </div>
-            <RegionsGrid />
-          </div>
-        </section>
+        
 
         {/* News Section */}
         <section className="news-section py-16 bg-gradient-to-br from-white via-gray-50 to-white">
@@ -131,7 +154,7 @@ export default function Home() {
               <div className="w-24 h-1 bg-gradient-to-r from-[#4CAF50] to-[#F7E859] mx-auto"></div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {newsData.news.map((newsItem) => (
+              {newsData.news.slice(0, 3).map((newsItem) => (
                 <NewsCard
                   key={newsItem.id}
                   id={newsItem.id}
@@ -142,6 +165,11 @@ export default function Home() {
                   tags={newsItem.tags}
                 />
               ))}
+            </div>
+            <div className="text-center mt-12">
+              <Link href="/actualites" className="inline-block px-8 py-3 bg-primary hover:bg-primary/90 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
+                Voir toutes les actualités
+              </Link>
             </div>
           </div>
         </section>
@@ -166,6 +194,37 @@ export default function Home() {
                 <div className="stat-number h2 mb-2">9 350</div>
                 <div className="stat-label">km²</div>
               </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Interactive Map Section */}
+        <section className="py-24 bg-gradient-to-b from-white via-gray-50 to-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <span className="text-green-600 font-semibold text-sm uppercase tracking-wider mb-4 block">Découverte</span>
+              <h2 className="text-5xl font-bold text-gray-900 mb-6">Les Régions de la Côte d'Ivoire</h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-yellow-400 mx-auto mb-8"></div>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Explorez la richesse culturelle et la diversité des régions ivoiriennes. Chaque région raconte une histoire unique, 
+                préserve un patrimoine précieux et contribue à la beauté de notre pays.
+              </p>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <RegionsGrid />
+            </motion.div>
+            <div className="text-center">
+              <button 
+                onClick={handleExploreClick}
+                className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
+              >
+                Découvrir notre région
+              </button>
             </div>
           </div>
         </section>

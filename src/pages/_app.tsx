@@ -1,8 +1,15 @@
+import '@/styles/globals.css';
+import '@/styles/modal.css';
 import type { AppProps } from 'next/app';
-import '../styles/globals.css';
+import QuickAccess from '@/components/QuickAccess';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <QuickAccess />
+    </>
+  );
 }
 
 export default MyApp;
