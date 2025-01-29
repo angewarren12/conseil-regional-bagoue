@@ -91,8 +91,8 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
 
   const bind = useGesture({
     onHover: ({ hovering }) => api({ scale: hovering ? 1.05 : 1 }),
-    onDrag: ({ down, movement: [mx], velocity }) => {
-      if (down && velocity > 0.2) {
+    onDrag: ({ down, movement: [mx], velocity: [vx] }) => {
+      if (down && vx > 0.2) {
         onClose();
       }
     },
