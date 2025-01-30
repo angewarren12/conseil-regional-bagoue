@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import type { MotionProps } from 'framer-motion';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import { Dialog } from '@headlessui/react';
@@ -9,7 +10,7 @@ import { Tilt } from 'react-tilt';
 import { useInView } from 'react-intersection-observer';
 import { Particles as ReactParticles } from '@tsparticles/react';
 import { loadSlim } from 'tsparticles-slim';
-import type { Engine } from 'tsparticles-engine';
+import type { Engine, ISourceOptions } from 'tsparticles-engine';
 
 interface RegionModalProps {
   region: {
@@ -39,12 +40,7 @@ const tabs = [
   { id: 'tourisme', label: 'Tourisme', icon: '🌄' },
 ];
 
-const particlesOptions = {
-  background: {
-    color: {
-      value: "transparent",
-    },
-  },
+const particlesOptions: ISourceOptions = {
   particles: {
     number: {
       value: 50,
@@ -54,27 +50,51 @@ const particlesOptions = {
       }
     },
     color: {
-      value: "#ffffff"
+      value: "#000000"
+    },
+    shape: {
+      type: "circle"
     },
     opacity: {
-      value: 0.3,
-      random: true
+      value: 0.5,
+      random: false
     },
     size: {
       value: 3,
       random: true
     },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#000000",
+      opacity: 0.4,
+      width: 1
+    },
     move: {
       enable: true,
-      speed: 1,
+      speed: 2,
       direction: "none",
-      random: true,
+      random: false,
       straight: false,
-      outModes: {
-        default: "out"
-      }
+      out_mode: "out",
+      bounce: false
     }
-  }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse"
+      },
+      onclick: {
+        enable: true,
+        mode: "push"
+      },
+      resize: true
+    }
+  },
+  retina_detect: true
 };
 
 const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
@@ -89,7 +109,7 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
     await loadSlim(engine);
   }, []);
 
-  const bind = useGesture({
+  const bindGesture = useGesture({
     onHover: ({ hovering }) => api({ scale: hovering ? 1.05 : 1 }),
     onDrag: ({ down, movement: [mx], velocity: [vx] }) => {
       if (down && vx > 0.2) {
@@ -104,39 +124,26 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
       onClose={onClose}
       className="relative z-50"
     >
-      <div className="fixed inset-0 bg-black/70 backdrop-blur-sm" aria-hidden="true" />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 bg-black/70 backdrop-blur-sm"
+        aria-hidden="true"
+      />
 
       <div className="fixed inset-0 flex items-center justify-center p-4">
         <Dialog.Panel className="w-full max-w-4xl">
           <motion.div
-            variants={{
-              hidden: { opacity: 0, scale: 0.8, y: 100 },
-              visible: { 
-                opacity: 1, 
-                scale: 1, 
-                y: 0,
-                transition: {
-                  type: "spring",
-                  damping: 25,
-                  stiffness: 500
-                }
-              },
-              exit: { 
-                opacity: 0, 
-                scale: 0.8, 
-                y: 100,
-                transition: {
-                  type: "spring",
-                  damping: 25,
-                  stiffness: 500
-                }
-              }
+            initial={{ opacity: 0, scale: 0.8, y: 100 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 100 }}
+            transition={{
+              type: "spring",
+              damping: 25,
+              stiffness: 500
             }}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            {...bind()}
-            className="bg-white/90 backdrop-blur-md shadow-xl rounded-2xl overflow-hidden"
+            className="relative bg-white rounded-xl shadow-xl overflow-hidden"
           >
             <ReactParticles
               id="tsparticles"
@@ -203,23 +210,12 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    transition={{ 
-                      type: "spring",
-                      damping: 25,
-                      stiffness: 500
-                    }}
                   >
                     {activeTab === 'apercu' && (
                       <motion.div 
                         className="space-y-6"
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ 
-                          type: "spring",
-                          damping: 25,
-                          stiffness: 500,
-                          delay: 0.2
-                        }}
                       >
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <Tilt options={{ max: 10, scale: 1.05 }}>
@@ -238,12 +234,6 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                         <motion.div
                           initial={{ opacity: 0, x: -50 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ 
-                            type: "spring",
-                            damping: 25,
-                            stiffness: 500,
-                            delay: 0.2
-                          }}
                         >
                           <h4 className="font-semibold text-gray-900 mb-2">Particularités</h4>
                           <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -252,8 +242,6 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                                 key={index}
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                className="flex items-center space-x-2 text-gray-600"
                               >
                                 <span className="h-2 w-2 bg-green-500 rounded-full" />
                                 <span>{item}</span>
@@ -269,12 +257,6 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                         className="space-y-6"
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ 
-                          type: "spring",
-                          damping: 25,
-                          stiffness: 500,
-                          delay: 0.2
-                        }}
                       >
                         <Tilt options={{ max: 10, scale: 1.05 }}>
                           <div className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
@@ -291,8 +273,6 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                                   key={index}
                                   initial={{ opacity: 0, x: -20 }}
                                   animate={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: index * 0.1 }}
-                                  className="flex items-center space-x-2 text-gray-600"
                                 >
                                   <span className="h-2 w-2 bg-blue-500 rounded-full" />
                                   <span>{dept}</span>
@@ -308,8 +288,6 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                                   key={index}
                                   initial={{ opacity: 0, x: -20 }}
                                   animate={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: index * 0.1 }}
-                                  className="flex items-center space-x-2 text-gray-600"
                                 >
                                   <span className="h-2 w-2 bg-purple-500 rounded-full" />
                                   <span>{sp}</span>
@@ -326,12 +304,6 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                         className="space-y-6"
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ 
-                          type: "spring",
-                          damping: 25,
-                          stiffness: 500,
-                          delay: 0.2
-                        }}
                       >
                         <Tilt options={{ max: 10, scale: 1.05 }}>
                           <div className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
@@ -342,8 +314,6 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                                   key={index}
                                   initial={{ opacity: 0, x: -20 }}
                                   animate={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: index * 0.1 }}
-                                  className="flex items-center space-x-2 text-gray-600"
                                 >
                                   <span className="h-2 w-2 bg-yellow-500 rounded-full" />
                                   <span>{activite}</span>
@@ -360,12 +330,6 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                         className="space-y-6"
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ 
-                          type: "spring",
-                          damping: 25,
-                          stiffness: 500,
-                          delay: 0.2
-                        }}
                       >
                         <Tilt options={{ max: 10, scale: 1.05 }}>
                           <div className="bg-gray-50 p-4 rounded-lg hover:shadow-lg transition-shadow">
@@ -376,8 +340,6 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                                   key={index}
                                   initial={{ opacity: 0, x: -20 }}
                                   animate={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: index * 0.1 }}
-                                  className="flex items-center space-x-2 text-gray-600"
                                 >
                                   <span className="h-2 w-2 bg-red-500 rounded-full" />
                                   <span>{attraction}</span>

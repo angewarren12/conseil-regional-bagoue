@@ -1,30 +1,49 @@
 {
   "news": [
     {
-      "id": "radio-ci-bagoue",
-      "image": "/images/news/adio-ci-bagoue.png",
-      "date": "19 - 24 janvier 2025",
-      "title": "Radio Côte d'Ivoire s'installe dans la Bagoué",
-      "description": "Populations de la Bagoué, réservons un accueil chaleureux à l'équipe de Radio Côte d'Ivoire et participons massivement aux émissions qui mettront en lumière notre belle région.",
-      "fullDescription": "Populations de la Bagoué, réservons un accueil chaleureux à l'équipe de Radio Côte d'Ivoire et participons massivement aux émissions qui mettront en lumière notre belle région."
+      "id": "news1",
+      "title": "Conseil Régional de la Bagoué: Bruno Nabagné Kone inaugure de nouvelles infrastructures",
+      "date": "2025-01-25",
+      "image": "/images/news/news1.png",
+      "description": "Le Président du Conseil régional de la Bagoué a procédé à l'inauguration de plusieurs infrastructures dans les localités de Sianhala, Mougnini, N'déou et Nibrini.",
+      "fullDescription": "Ce samedi 25 janvier 2025, le Président du Conseil régional de la Bagoué, Bruno Nabagné Koné, a procédé à l'inauguration de plusieurs infrastructures réalisées au profit des localités de Sianhala, Mougnini, N'déou et Nibrini.\n\nLes réalisations par localité\n\nEnfin à Nibrini:\nUn forage a été réalisé pour offrir un accès durable à l'eau potable. Ce forage vient s'ajouter à un autre déjà réalisé dans cette localité, hors budget du Conseil régional, portant ainsi le nombre total de forages à deux.",
+      "tags": ["infrastructures", "développement", "eau potable"]
     },
     {
-      "id": "condoleances-saliou-toure",
-      "image": "/images/news/condoleances-saliou-toure.png",
-      "date": "19 novembre 2024",
-      "title": "Présentation de condoléances au Professeur Saliou Touré",
-      "description": "Endeuillé par le décès de sa fille, M. Bruno Nabagné Koné, Président du Conseil Régional de la Bagoué, a tenu à marquer sa solidarité en se rendant auprès de son aîné...",
-      "fullDescription": "Endeuillé par le décès de sa fille, M. Bruno Nabagné Koné, Président du Conseil Régional de la Bagoué, a tenu à marquer sa solidarité en se rendant auprès de son aîné, le Professeur Saliou Touré, pour lui présenter ses condoléances le mardi 19 novembre 2024. Accompagné de son épouse et de plusieurs de ses collaborateurs, il a exprimé sa profonde compassion à l'endroit de la famille éplorée. Cette visite de condoléances reflète la considération et le respect que M. Bruno Nabagné Koné porte au Professeur Saliou Touré, ainsi que son engagement à être présent pour ses proches et amis, dans les moments de bonheur comme dans les épreuves difficiles.",
-      "tags": ["#Solidarité", "#UnionEtCompassion", "#HommageEtSoutien", "#BrunoNabagnéKoné"]
+      "id": "news2",
+      "title": "Inauguration de nouvelles infrastructures par le Président du Conseil Régional de la Bagoué",
+      "date": "2025-01-25",
+      "image": "/images/news/news2.png",
+      "description": "Le premier Vice-président du conseil régional de la Bagoué a participé aux côtés du Président à l'inauguration de plusieurs infrastructures.",
+      "fullDescription": "Le samedi 25 janvier 2025, le premier Vice-président du conseil régional de la Bagoué Tchonon Coulibaly a pris part au côté du Président du Conseil régional de la Bagoué, M. Le Ministre Bruno Nabagné Koné, à l'inauguration de plusieurs infrastructures au bénéfice des localités de #Sianhala, #Mougnini, #N'déou et de #Nibrini.\n\nLes infrastructures inaugurées visent à améliorer les conditions de vie, de santé et d'éducation des populations dans notre région. À travers une mobilisation exceptionnelle et festive les populations ont exprimé leur joie dans chaque chacune de ces localités.\n\nCes projets réalisés sont le fruit de l'engagement du Président du Conseil Régional et du président de la République son excellence Alassane Ouattara pour le développement et le bien-être des populations.",
+      "tags": ["infrastructures", "développement", "éducation", "santé"]
     },
     {
-      "id": "intronisation-konate",
-      "image": "/images/news/intronisation-konate.png",
-      "date": "30 novembre 2024",
-      "title": "Intronisation de Konaté Séguénon : Bruno Koné réaffirme son soutien",
-      "description": "Le samedi 30 novembre 2024, la Place Ficgayo de Yopougon a abrité l'intronisation de Konaté Séguénon comme Chef de la communauté des ressortissants de la Bagoué...",
-      "fullDescription": "Le samedi 30 novembre 2024, la Place Ficgayo de Yopougon a abrité l'intronisation de Konaté Séguénon comme Chef de la communauté des ressortissants de la Bagoué. Cet événement, riche en émotions, a réuni une foule venue célébrer la fraternité, la solidarité et l'attachement aux valeurs culturelles de la région. Représentant le Ministre Bruno Nabagné Koné, Président du Conseil Régional de la Bagoué, M. Konon Konaté, 3ᵉ Vice-Président du Conseil Régional de la Bagoué, a exprimé sa gratitude pour cette initiative qui renforce l'unité des fils et filles de la région. Dans son allocution, il a salué le leadership du Chef Konaté Séguénon et a réitéré l'engagement du Ministre à œuvrer pour le développement de la région et de sa diaspora. « Le Ministre Bruno Nabagné Koné, fidèle à son engagement pour le développement de la Bagoué et pour le mieux vivre de ses fils et de ses filles, réaffirme son soutien à toute action visant à promouvoir notre culture, à renforcer notre cohésion et à améliorer le bien-être de nos populations, que ce soit dans notre région ou dans la diaspora », a-t-il déclaré. Cette intronisation qui ouvre une nouvelle page dans l'histoire des ressortissants de la Bagoué à Yopougon a également été marquée par la présence de plusieurs personnalités de la Bagoué notamment, le Ministre Dossongui Koné, l'artiste Aïcha Koné, M. DOFÉRÉ Koné, Directeur de Cabinet du P.CRB ainsi que plusieurs élus et cadres.",
-      "tags": ["#CohésionBagoué", "#UnitéEtSolidarité", "#TraditionsEtDéveloppement", "#BagouéEnAvant"]
+      "id": "news3",
+      "title": "Condoléances suite au décès du chef de village de Ziédougou",
+      "date": "2025-01-26",
+      "image": "/images/news/news3.png",
+      "description": "Le Ministre Bruno Nabagné KONE a reçu l'annonce du décès du chef de village de Ziédougou.",
+      "fullDescription": "Envoyé par la notabilité de Ziédougou, M. KONÉ Nidjan, Secrétaire Général de la Mutuelle de Développement Économique et Social dudit village, situé dans le département de Boundiali, est venu ce dimanche soir, annoncer officiellement à Monsieur le Ministre Bruno Nabagné KONE, à sa résidence de Kouto, le décès de leur chef de village, feu FOFANA Folsé.\n\nMonsieur Bruno Nabagné KONE a exprimé ses sincères condoléances à M. KONÉ Nidjan et à sa délégation, et il lui a demandé de traduire sa solidarité à la notabilité de Ziédougou.",
+      "tags": ["condoléances", "tradition", "chefferie"]
+    },
+    {
+      "id": "news4",
+      "title": "Récapitulatif de la tournée du Président de Région de la Bagoué",
+      "date": "2025-01-25",
+      "image": "/images/news/news4.png",
+      "description": "Bilan détaillé des infrastructures remises lors de la tournée du Président dans plusieurs localités.",
+      "fullDescription": "Ce samedi 25 janvier 2025, une délégation du Conseil Régional de la Bagoué, sous l'impulsion du Ministre Bruno Nabagné KONÉ, a posé les valises dans la Sous-préfecture de Sianhala, précisément dans les localités de Sianhala, Mougnini, N'Déou et Nibrini.\n\nAu cours de cette tournée, le Président a procédé à la remise de plusieurs infrastructures communautaires de bases dans différentes localités de la Bagoué.\n\n🇨🇮 À SIANHALA, le Président de Région, a procédé à la remise des clés d'un bâtiment de trois (03) salles de classe avec clôture + bureau et bloc latrines de 03 cabines,\n\n🇨🇮 À MOUGNINI, à la remise des clés d'un bâtiment de 03 salles de classe et bureau réhabilité,\n\n🇨🇮 À N'DÉOU, la réhabilitation d'un bâtiment de trois (03) salles de classe et bureau,\n\n🇨🇮 À NIBRINI, la remise des clés d'une pompe à motricité humaine.\n\nToutes ces actions s'inscrivent dans la vision de développement de l'équipe du Conseil Régional de la Bagoué et visent également à améliorer durablement les conditions de vie des populations.\n\nÀ ces différentes remises, ont pris part le corps préfectoral de la Région, les élus et cadres du département, les autorités administratives, coutumières et religieuses.",
+      "tags": ["infrastructures", "éducation", "développement", "eau potable"]
+    },
+    {
+      "id": "news5",
+      "title": "Autonomisation des jeunes et des femmes - PEJEDEC 3",
+      "date": "2025-01-28",
+      "image": "/images/news/news5.png",
+      "description": "Lancement des activités des incubateurs Agro pastoraux et agroalimentaires du PEJEDEC 3.",
+      "fullDescription": "Dans le cadre du financement des projets jeunes initiés par le gouvernement Ivoirien avec l'appui de la Banque Mondiale, le Conseil Régional de la Bagoué, en collaboration avec le Ministère de la Promotion de la Jeunesse, de l'Insertion Professionnelle et du Service Civique (MPPSC) et le Bureau de Coordination des Programmes Emploi (BCP-EMPLOI), vous informe du démarrage officiel des activités des incubateurs Agro pastoraux et agroalimentaires du Projet Emploi Jeune et Développement des Compétences en sa phase 3 (PEJEDEC 3)\n\nLe President du Conseil Régional de la Bagoué, Monsieur Bruno Nabagné KONÉ, invite les Jeunes (femmes et garçons), Agés de 18 à 40 ans, désireux d'exercer dans les domaines agro-pastoraux et agroalimentaire à se faire enrôler en ligne.\n\nPour plus d'informations, contactez :\n\nAu Conseil Régional :\n- M. KROMA DRISSA: 07 07 68 55 12\n- M. SORO NAMOGO: 07 07 91 09 07\n- M. KOUAKOU JACQUES: 05 46 92 15 84\n- Mme COULIBALI AHOUA: 07 47 15 88 30\n\nDélégué Régional CNJCI:\n- M. GANON Yardjouma: 07 07 57 67 69",
+      "tags": ["jeunesse", "emploi", "formation", "agriculture"]
     }
   ]
 }
