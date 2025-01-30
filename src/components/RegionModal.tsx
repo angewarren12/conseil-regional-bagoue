@@ -4,7 +4,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import { useSpring, animated } from '@react-spring/web';
 import { useGesture } from '@use-gesture/react';
-import { Tilt } from 'react-tilt';
+import Tilt from 'react-parallax-tilt';
 import { useInView } from 'react-intersection-observer';
 
 interface RegionModalProps {
@@ -112,7 +112,7 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
               {activeTab === 'apercu' && (
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
-                    <Tilt>
+                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
                       <div className="bg-gray-50 p-4 rounded-lg">
                         <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
                           <span className="text-lg mr-2">👥</span>
@@ -121,7 +121,7 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                         <p className="text-gray-700">{region.details[0]} habitants</p>
                       </div>
                     </Tilt>
-                    <Tilt>
+                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
                       <div className="bg-gray-50 p-4 rounded-lg">
                         <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
                           <span className="text-lg mr-2">📏</span>
@@ -198,13 +198,13 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                     </ul>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
-                    <Tilt>
+                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
                       <div className="bg-gray-50 p-4 rounded-lg text-center">
                         <span className="text-2xl mb-2 block">🌾</span>
                         <span className="font-medium text-gray-900">Agriculture</span>
                       </div>
                     </Tilt>
-                    <Tilt>
+                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
                       <div className="bg-gray-50 p-4 rounded-lg text-center">
                         <span className="text-2xl mb-2 block">🏭</span>
                         <span className="font-medium text-gray-900">Industrie</span>
@@ -228,13 +228,13 @@ const RegionModal: React.FC<RegionModalProps> = ({ region, onClose }) => {
                     </ul>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
-                    <Tilt>
+                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
                       <div className="bg-gray-50 p-4 rounded-lg text-center">
                         <span className="text-2xl mb-2 block">🏛️</span>
                         <span className="font-medium text-gray-900">Sites historiques</span>
                       </div>
                     </Tilt>
-                    <Tilt>
+                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5}>
                       <div className="bg-gray-50 p-4 rounded-lg text-center">
                         <span className="text-2xl mb-2 block">🎭</span>
                         <span className="font-medium text-gray-900">Culture</span>
