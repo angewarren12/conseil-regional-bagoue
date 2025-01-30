@@ -188,7 +188,7 @@ export default function Documents() {
                     layout
                     className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 rounded-lg border border-gray-100 hover:border-green-200 transition-colors duration-200 hover:shadow-md"
                     data-aos="fade-up"
-                    data-aos-delay={doc.id * 100}
+                    data-aos-delay={parseInt(doc.id) * 100}
                   >
                     <div className="mb-4 sm:mb-0">
                       <h3 className="text-lg font-medium text-gray-900 mb-1">
